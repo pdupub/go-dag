@@ -12,7 +12,6 @@ matrix:
       sudo: required
       go: 1.12.x
       script:
-        - make install
         - GO111MODULE=on
         - go test ./
 
@@ -21,13 +20,11 @@ matrix:
       sudo: required
       go: 1.13.x
       script:
-        - make install
         - GO111MODULE=on
         - go test ./
 
     - os: osx
       go: 1.13.x
       script:
-        - make install
         - GO111MODULE=on
         - go test ./
