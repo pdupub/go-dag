@@ -1,0 +1,31 @@
+language: go
+go:
+  - tip
+go_import_path: github.com/pdupub/go-dag
+sudo: false
+matrix:
+  include:
+    - os: linux
+      dist: xenial
+      sudo: required
+      go: 1.12.x
+      script:
+        - make install
+        - GO111MODULE=on
+        - go test ./
+
+    - os: linux
+      dist: xenial
+      sudo: required
+      go: 1.13.x
+      script:
+        - make install
+        - GO111MODULE=on
+        - go test ./
+
+    - os: osx
+      go: 1.13.x
+      script:
+        - make install
+        - GO111MODULE=on
+        - go test ./
